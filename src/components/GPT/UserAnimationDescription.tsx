@@ -13,8 +13,8 @@ export type UserAnimationDescriptionProps = {
 
 async function requestGPT(description: string) {
   const configuration = new Configuration({
-    organization: "org-w3pzkJvfH1OVGYWqigk0JqjE",
-    apiKey: "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",
+    organization: process.env.NEXT_PUBLIC_OPENAI_ORG_KEY,
+    apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY,
   });
   const openai = new OpenAIApi(configuration);
   const preprompt = `
@@ -32,7 +32,7 @@ REMEMBER: Only give code for the above request.
       `;
 
   const response = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
+    model: "gpt-4",
     messages: [
       {
         content: preprompt + description,
