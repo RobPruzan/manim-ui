@@ -32,7 +32,7 @@ REMEMBER: Only give code for the above request.
       `;
 
   const response = await openai.createChatCompletion({
-    model: "gpt-4",
+    model: process.env.NEXT_PUBLIC_MODEL_NAME ?? "gpt-3.5-turbo",
     messages: [
       {
         content: preprompt + description,
