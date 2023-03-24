@@ -31,7 +31,7 @@ app = Flask(__name__)
 CORS(
     app,
     resources={
-        r"/api/*": {
+        r"/*": {
             "origins": [
                 "http://localhost:3000",
                 "https://northstar.vercel.app",
@@ -65,6 +65,7 @@ def manim():
 
         # scene = CreateCircle()
         # scene.render()
+        exec(code)
         video_path = Path(config.output_file)
         file = send_file(
             str(video_path),
