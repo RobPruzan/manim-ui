@@ -14,8 +14,9 @@ docker build -t manim_flask . && docker run -d -p 8000:8000 --name manim_flask_c
 
 ## NextJS
 
-- Add database URL- follow .env.example
+- Add database URL to .env- follow .env.example
   - Note, if you're not using postgres, change the database type in schema.prisma, though for now the DB is not neccesarry, the simplest option would be to use sqllite
+- Add your open AI API and Org keys to .env- follow .env.example
 
 ```bash
 cd manim_ui
