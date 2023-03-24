@@ -1,9 +1,10 @@
 import {
   ChatCompletionRequestMessageRoleEnum,
   Configuration,
-  OpenAIApi
+  OpenAIApi,
 } from "openai";
 import { useState, type Dispatch, type SetStateAction } from "react";
+import { fetchVideo } from "../Video/VideoPlayer";
 export type UserAnimationDescriptionProps = {
   setVideoURL: Dispatch<SetStateAction<string | null>>;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
@@ -94,8 +95,6 @@ const UserAnimationDescription = ({
         onChange={(e) => setUserAnimationDescription(e.target.value)}
         className="m-2 h-3/4 w-3/4 rounded-lg bg-zinc-800 p-2 text-white outline-none"
       />
-<<<<<<< HEAD
-=======
       <button
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={async () => {
@@ -123,7 +122,6 @@ const UserAnimationDescription = ({
       >
         Submit
       </button>
->>>>>>> 29109d7 (Fetch video and render in browser)
     </>
   );
 };
